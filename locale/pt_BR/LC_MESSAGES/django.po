@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-10 19:22-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\product\models.py:9
+msgid "Not specified"
+msgstr "Não especificado"
+
+#: .\product\models.py:10
+msgid "Smoke"
+msgstr "Fumo"
+
+#: .\product\models.py:11
+msgid "Drinks"
+msgstr "Bebidas"
+
+#: .\product\models.py:12
+msgid "Foods"
+msgstr "Comestíveis"
+
+#: .\product\models.py:13
+msgid "Perfumes and Cosmetics"
+msgstr "Perfumes e Cosmeticos"
+
+#: .\product\models.py:14
+msgid "Watches Jewelry & Accessories"
+msgstr "Relógios Jóias e Acessórios"
+
+#: .\product\models.py:15
+msgid "Toys"
+msgstr "Brinquedos"
+
+#: .\product\models.py:16
+msgid "Fashion"
+msgstr "Moda"
+
+#: .\product\models.py:17
+msgid "Electronics"
+msgstr "Eletrônicos"
+
+#: .\product\models.py:18
+msgid "Other Goods"
+msgstr "Outras Mercadorias"
+
+#: .\product\models.py:19
+msgid "Readings and Publications"
+msgstr "Leituras e Publicações"
+
+#: .\product\models.py:20
+msgid "Souvenirs (Local Goods)"
+msgstr "Souvenirs (Mercadorias Locais)"
