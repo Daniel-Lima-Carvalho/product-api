@@ -46,11 +46,41 @@ class AccountTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.json(), self.default_product)
         
+    def test_update_product(self):
+        self.create_product()
+        data = copy.deepcopy(self.default_product)
+        data['category'] = '30'
+
+        response = self.client.put(f'{self.api_url}1/', data, format='json')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json(), self.default_product)
+    
+    def test_partially_update_product(self):
+        self.create_product()
+
+        data = {
+            "price": 25.0
+        }
+
+        response = self.client.patch(f'{self.api_url}1/', data, format='json')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json()['price'], data['price'])
+    
+    def test_delete_product(self):
+        self.create_product()
+
+        response = self.client.delete(f'{self.api_url}1/')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json(), self.default_product)
+        self.assertEqual(Product.objects.count(), 0)
     
     def create_product(self):
         data = copy.deepcopy(self.default_product)
         data['category'] = '30'
-        
+
         response = self.client.post(self.api_url, data, format='json')
         return response
         
