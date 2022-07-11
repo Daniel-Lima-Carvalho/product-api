@@ -10,8 +10,10 @@ class StandardResultsSetPagination(PageNumberPagination):
     max_page_size = 50
 
 class ProductSerializer(serializers.ModelSerializer):
+    category = serializers.CharField(source='get_category_display')
+
     class Meta:
-        fields = '__all__'
+        fields = ['id', 'ean', 'description', 'category', 'price']
         model = Product
 
 class ProductViewSet(viewsets.ModelViewSet):
