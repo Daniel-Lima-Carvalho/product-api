@@ -73,8 +73,7 @@ class AccountTests(APITestCase):
 
         response = self.client.delete(f'{self.api_url}1/')
 
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.json(), self.default_product)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Product.objects.count(), 0)
     
     def create_product(self):
