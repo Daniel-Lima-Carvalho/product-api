@@ -7,7 +7,6 @@ from rest_framework.test import APITestCase
 
 from product.models import Product
 
-# Create your tests here.
 class ProductTests(APITestCase):
     def setUp(self):
         self.api_url = '/api/products/'
