@@ -8,7 +8,7 @@ from rest_framework.test import APITestCase
 from product.models import Product
 
 # Create your tests here.
-class AccountTests(APITestCase):
+class ProductTests(APITestCase):
     def setUp(self):
         self.api_url = '/api/products/'
         self.super_user = self.create_superuser()
