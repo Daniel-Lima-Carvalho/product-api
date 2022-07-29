@@ -70,3 +70,28 @@ class ProductViewSet(viewsets.ModelViewSet):
             return JsonResponse(result, safe=False, status=400)
 
         return JsonResponse(result, safe=False, status=200)
+    
+    @action(methods=['delete'], detail=True)
+    def delete_image(self, request, pk=None):
+        data = request.data
+
+        result = { 
+            'success': True, 
+            'message':'Image deleted!' 
+        }
+
+        try:
+            image_id = data['image_id']
+        except KeyError as e:
+            result['success'] = False
+            result['message'] = 'Missing field ' + str(e)
+            return JsonResponse(result, safe=False, status=400)
+
+        try:
+            Image.objects.filter(id=int(image_id)).delete()
+        except Exception as e:
+            result['success'] = False
+            result['message'] = 'Error to delete: ' + str(e)
+            return JsonResponse(result, safe=False, status=500)
+
+        return JsonResponse(result, safe=False, status=200)
