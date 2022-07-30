@@ -24,7 +24,7 @@ class ImageRelatedSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     category = ChoiceField(choices=CATEGORY_CHOICES)
-    images = ImageRelatedSerializer(many=True)
+    images = ImageRelatedSerializer(many=True, required=False)
 
     class Meta:
         fields = ['id', 'ean', 'description', 'category', 'price', 'images']
@@ -69,7 +69,7 @@ class ProductViewSet(viewsets.ModelViewSet):
             result['message'] = 'Validation error: ' + str(e)
             return JsonResponse(result, safe=False, status=400)
 
-        return JsonResponse(result, safe=False, status=200)
+        return JsonResponse(result, safe=False, status=201)
     
     @action(methods=['delete'], detail=True)
     def delete_image(self, request, pk=None):
