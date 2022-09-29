@@ -35,3 +35,25 @@ Get list of products
     ]
 }
 ```
+## 🟢 GET - Get Product
+
+Get just one product
+
+###### Request Path
+```
+/api/products/1
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Response Example
+```
+{
+    "id": 1,
+    "ean": "32131321",
+    "description": "Perfume antonio bandeiras",
+    "category": "Perfumes and Cosmetics",
+    "price": 56.3,
+    "images": []
+}
+```
