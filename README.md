@@ -3,8 +3,6 @@ Product API Django REST Framework
 
 ## 🟢 GET - List all products
 
-Create product
-
 ###### Request Path
 ```
 /api/products/
@@ -37,8 +35,6 @@ Create product
 ```
 ## 🟢 GET - Get product 
 
-Get just one product
-
 ###### Request Path
 ```
 /api/products/1
@@ -59,8 +55,6 @@ Get just one product
 ```
 
 ## 🟡 POST - Create product 
-
-Create product
 
 ###### Request Path
 ```
@@ -91,8 +85,6 @@ Create product
 ```
 ## 🔵 PUT - Update product 
 
-Update product
-
 ###### Request Path
 ```
 /api/products/2/
@@ -122,8 +114,6 @@ Update product
 ```
 ## ⚫ PATCH - Partial update product 
 
-Partial update product
-
 ###### Request Path
 ```
 /api/products/2/
@@ -150,8 +140,6 @@ Partial update product
 ```
 ## 🔴 DELETE - Delete product
 
-Delete product
-
 ###### Request Path
 ```
 /api/products/2/
@@ -171,8 +159,6 @@ Delete product
 }
 ```
 ## 🟡 POST - Add image to product
-
-Add image to product
 
 ###### Request Path
 ```
@@ -196,8 +182,6 @@ Add image to product
 }
 ```
 ## 🔴 DELETE - Delete image from product
-
-Delete image from product
 
 ###### Request Path
 ```
