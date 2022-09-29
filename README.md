@@ -57,7 +57,7 @@ Get just one product
     "images": []
 }
 ```
-```
+
 ## 🟡 POST - Create Product 
 
 Create product
