@@ -1,7 +1,7 @@
 # Product API Django REST
 Product API Django REST Framework
 
-## 🟢 GET - List products
+## 🟢 GET - List all products
 
 Create product
 
