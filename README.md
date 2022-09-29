@@ -89,3 +89,34 @@ Create product
     "images": []
 }
 ```
+## 🔵 PUT - Update Product 
+
+Update product
+
+###### Request Path
+```
+/api/products/2/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "price": 17.00,
+    "category": "30"
+}
+```
+###### Response Example
+```
+{
+    "id": 2,
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "category": "Foods",
+    "price": 17.0,
+    "images": []
+}
+```
