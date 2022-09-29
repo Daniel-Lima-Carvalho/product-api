@@ -1,7 +1,7 @@
 # Product API Django REST
 Product API Django REST Framework
 
-## 🟢 GET - List Products
+## 🟢 GET - List products
 
 Create product
 
@@ -35,7 +35,7 @@ Create product
     ]
 }
 ```
-## 🟢 GET - Get Product 
+## 🟢 GET - Get product 
 
 Get just one product
 
@@ -58,7 +58,7 @@ Get just one product
 }
 ```
 
-## 🟡 POST - Create Product 
+## 🟡 POST - Create product 
 
 Create product
 
@@ -89,7 +89,7 @@ Create product
     "images": []
 }
 ```
-## 🔵 PUT - Update Product 
+## 🔵 PUT - Update product 
 
 Update product
 
