@@ -3,7 +3,7 @@ Product API Django REST Framework
 
 ## 🟢 GET - List Products
 
-Get list of products
+Create product
 
 ###### Request Path
 ```
@@ -35,7 +35,7 @@ Get list of products
     ]
 }
 ```
-## 🟢 GET - Get Product
+## 🟢 GET - Get Product 
 
 Get just one product
 
@@ -54,6 +54,38 @@ Get just one product
     "description": "Perfume antonio bandeiras",
     "category": "Perfumes and Cosmetics",
     "price": 56.3,
+    "images": []
+}
+```
+```
+## 🟡 POST - Create Product 
+
+Create product
+
+###### Request Path
+```
+/api/products/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "price": 14.00,
+    "category": "30"
+}
+```
+###### Response Example
+```
+{
+    "id": 2,
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "category": "Foods",
+    "price": 14.0,
     "images": []
 }
 ```
