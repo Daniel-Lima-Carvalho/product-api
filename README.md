@@ -1,9 +1,7 @@
 # Product API Django REST
 Product API Django REST Framework
 
-## 🟢 GET - List Products
-
-Get list of products
+## 🟢 GET - List all products
 
 ###### Request Path
 ```
@@ -33,5 +31,176 @@ Get list of products
             ]
         }
     ]
+}
+```
+## 🟢 GET - Get product 
+
+###### Request Path
+```
+/api/products/1
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Response Example
+```
+{
+    "id": 1,
+    "ean": "32131321",
+    "description": "Perfume antonio bandeiras",
+    "category": "Perfumes and Cosmetics",
+    "price": 56.3,
+    "images": []
+}
+```
+
+## 🟡 POST - Create product 
+
+###### Request Path
+```
+/api/products/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "price": 14.00,
+    "category": "30"
+}
+```
+###### Response Example
+```
+{
+    "id": 2,
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "category": "Foods",
+    "price": 14.0,
+    "images": []
+}
+```
+## 🔵 PUT - Update product 
+
+###### Request Path
+```
+/api/products/2/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "price": 17.00,
+    "category": "30"
+}
+```
+###### Response Example
+```
+{
+    "id": 2,
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "category": "Foods",
+    "price": 17.0,
+    "images": []
+}
+```
+## ⚫ PATCH - Partial update product 
+
+###### Request Path
+```
+/api/products/2/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "price": 10.00
+}
+```
+###### Response Example
+```
+{
+    "id": 2,
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "category": "Foods",
+    "price": 10.0,
+    "images": []
+}
+```
+## 🔴 DELETE - Delete product
+
+###### Request Path
+```
+/api/products/2/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Response Example
+```
+{
+    "id": 2,
+    "ean": "7223820",
+    "description": "Chocolate Dark Hazelnut Silver 300g",
+    "category": "Foods",
+    "price": 10.0,
+    "images": []
+}
+```
+## 🟡 POST - Add image to product
+
+###### Request Path
+```
+/products/2/add_image/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "image_url": "https://cf.shopee.com.br/file/7f2e9883bced4b790409ed6bd61b0102"
+}
+```
+
+###### Response Example
+```
+{
+    "success": true,
+    "message": "Image created!"
+}
+```
+## 🔴 DELETE - Delete image from product
+
+###### Request Path
+```
+/products/2/delete_image/
+```
+###### Request Headers
+`Authorization` Token **{token}**
+
+###### Request Body Example
+```
+{
+    "image_id": 2
+}
+```
+
+###### Response Example
+```
+{
+    "success": true,
+    "message": "Image deleted!"
 }
 ```
