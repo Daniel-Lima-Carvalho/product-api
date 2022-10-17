@@ -1,0 +1,19 @@
+name: CI and CD
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  ci_cd:
+    name: CI and CD
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Run tests
+        script: |
+            python manage.py test
+        
