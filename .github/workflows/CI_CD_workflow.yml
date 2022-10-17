@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-    continuous-integration:
+  continuous-integration:
     name: CI and CD
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-           python-version: 3.8.10
+          python-version: 3.8.10
       
       - name: Install requirements
         run: |
