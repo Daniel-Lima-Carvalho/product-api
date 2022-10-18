@@ -27,19 +27,24 @@ jobs:
             python manage.py test
       
       - name: Deploy to AWS  
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ${{ secrets.AWS_USERNAME }}
-          key: ${{ secrets.AWS_PRIVATE_KEY }}
-          port: 22
-          script: |
-            cd product-api
-            git pull origin master
-            source venv/bin/activate
-            pip install -r requirements.txt
-            python manage.py migrate
-            sudo systemctl restart product_api
+        env:
+          PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+          HOSTNAME : ${{ secrets.AWS_HOST  }}
+          USER_NAME : ${{ secrets.AWS_USERNAME  }}
+       
+         
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+        
+            cd product-api &&
+            git checkout master &&
+            git pull origin master &&
+            source venv/bin/activate &&
+            pip install -r requirements.txt &&
+            python manage.py migrate &&
+            sudo systemctl restart product_api &&
             sudo systemctl status product_api
+          '
             
         
