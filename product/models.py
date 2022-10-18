@@ -22,6 +22,9 @@ class Product(models.Model):
     price = models.FloatField()
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICES)
 
+    def __str__(self):
+        return f"{self.ean}  {self.description}"
+
 class Image(models.Model):
     url = models.TextField()
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='images')
