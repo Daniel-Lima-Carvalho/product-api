@@ -7,7 +7,7 @@ on:
 
 jobs:
   continuous-integration:
-    name: CI and CD
+    name: Continuous Integration
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -25,6 +25,14 @@ jobs:
       - name: Run tests
         run: |
             python manage.py test
+
+  continuous-deploy:
+    needs: continuous-integration
+    name: Continuous Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       
       - name: Deploy to AWS  
         uses: appleboy/ssh-action@master
